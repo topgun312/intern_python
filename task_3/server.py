@@ -29,6 +29,7 @@ class Server:
         data_router = {
             "data": data.data_str,
             "ip_to": data.ip_address,
+            "ip_from": self.get_ip()
         }
         Router.buffer.append(data_router)
         self.buffer.append({"data": data_router["data"], "ip_to": data_router["ip_to"]})
