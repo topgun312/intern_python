@@ -1,11 +1,11 @@
 import itertools
 import random
-from typing import Any, Generator
+from typing import Any, Generator, Callable
 
 from task_2.cell import Cell
 
 
-def cell_out_of_range(func: Any) -> Any:
+def cell_out_of_range(func: Callable[[int, int], Any]) -> Callable[[int, int], Any]:
     """
     Функция - декоратор для проверки существования клетки с введенными координатами
     """
@@ -35,7 +35,7 @@ class GamePole:
         """
         return [[Cell() for _ in range(self.N)] for _ in range(self.N)]
 
-    def set_mines_on_pole(self, mines: int) -> Any:
+    def set_mines_on_pole(self, mines: int) -> None:
         """
         Метод для расстановки мин на игровом поле и обновление значений соседних клеток
         """

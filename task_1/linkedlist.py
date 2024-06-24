@@ -1,5 +1,3 @@
-from typing import Any
-
 from task_1.objlist import ObjList
 
 
@@ -12,7 +10,7 @@ class LinkedList:
         self.head = None
         self.tail = None
 
-    def add_obj(self, obj: Any) -> None:
+    def add_obj(self, obj: ObjList) -> None:
         """
         Метод для добавления нового объекта obj класса ObjList в конец связного списка
         """
@@ -28,7 +26,7 @@ class LinkedList:
             self.tail.set_next(None)
             self.tail = new_object
 
-    def remove_obj(self) -> Any:
+    def remove_obj(self) -> None:
         """
         Метод для удаления последнего объекта из связного списка
         """
